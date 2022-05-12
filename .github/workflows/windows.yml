@@ -31,8 +31,8 @@ jobs:
         # Ruleset file that will determine what checks will be run
         ruleset: NativeRecommendedRules.ruleset
         # Paths to ignore analysis of CMake targets and includes
-        ignoredTargetPaths: ${{ github.workspace }}\googletest\googletest;${{ github.workspace }}\googletest\googlemock
-        ignoredIncludePaths: ${{ github.workspace }}\googletest\googletest\include;${{ github.workspace }}\googletest\googlemock\include
+        ignoredTargetPaths: ${{ github.workspace }}\googletest\googletest;${{ github.workspace }}\googletest\googlemock;${{ github.workspace }}\fakeit
+        ignoredIncludePaths: ${{ github.workspace }}\googletest\googletest\include;${{ github.workspace }}\googletest\googlemock\include;${{ github.workspace }}\fakeit
 
     # Upload SARIF file to GitHub Code Scanning Alerts
     - name: Upload SARIF to GitHub
