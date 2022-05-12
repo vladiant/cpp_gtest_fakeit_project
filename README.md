@@ -5,8 +5,8 @@ C++ template project with gtest and fakeit
 
 ### googletest
 * https://github.com/google/googletest
-* commit 703bd9caab50b139428cea1aaff9974ebee5742e
-* 1.10
+* commit e2239ee6043f73722e7aa812a459f54a28552929
+* 1.11.0
 
 ### FakeIt
 * https://github.com/eranpeer/FakeIt
