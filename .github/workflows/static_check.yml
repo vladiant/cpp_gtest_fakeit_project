@@ -32,10 +32,10 @@ jobs:
     - name: Install Clang Tidy
       run: |
         sudo apt-get update
-        sudo apt-get install -y clang-tidy 
+        sudo apt-get install -y clang-tidy
         sudo apt-get install -y clang-tools
 
-    - name: Run Clang Tidy    
+    - name: Run Clang Tidy
       shell: bash
       working-directory: ${{github.workspace}}/build
       run: |
@@ -47,15 +47,18 @@ jobs:
       with:
         name: clang_tidy_fixes
         path: ${{github.workspace}}/clang-tidy-fixes.yaml
-  
+
   cppcheck:
     name: CppCheck
     needs: configure
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
     - name: Download Compile Commands
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: compile_commands
 
@@ -64,7 +67,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y cppcheck
 
-    - name: Run CppCheck    
+    - name: Run CppCheck
       shell: bash   
       run: |
           cppcheck --project=${{github.workspace}}/compile_commands.json \
